@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Barbearia Xadrez</title>
+</head>
+
+<body>
+    <header>
+        <img class="icone" src="icone.jpg" alt="icone">
+        <nav>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#info">Sobre Nós</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="figura">
+        <img class="img" src="barbearia.jpeg" alt="barbearia">
+    </div>
+    <div id="info" class="info">
+        <div class="container">
+            <h1 class="titulo">Barbearia Xadrez</h1>
+            <p>Somos uma barbearia dedicada a oferecer serviços de alta qualidade para homens modernos que buscam estilo e cuidado pessoal. Com uma equipe experiente de barbeiros apaixonados pelo ofício, proporcionamos cortes de cabelo e cuidados com a barba que refletem o estilo e personalidade de cada cliente.</p>
+            <p>Nossa missão é proporcionar uma experiência única e relaxante em um ambiente acolhedor e amigável. Valorizamos a excelência no atendimento ao cliente e nos esforçamos para superar as expectativas de cada pessoa que entra em nossa barbearia.</p>
+            <p>Além dos serviços de barbearia tradicionais, oferecemos tratamentos de spa masculinos e uma variedade de produtos de cuidados pessoais de alta qualidade para ajudar nossos clientes a manter sua aparência impecável entre as visitas. Na Barbearia Xadrez, estamos comprometidos em proporcionar não apenas um ótimo corte de cabelo, mas também uma experiência memorável que deixa nossos clientes se sentindo confiantes e rejuvenescidos. Visite-nos e descubra o que nos torna a escolha preferida para homens que valorizam estilo e qualidade.</p>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="1.jpg" alt="Descrição da Imagem 1">
+        <img src="2.jpg" alt="Descrição da Imagem 2">
+        <img src="3.jpg" alt="Descrição da Imagem 3">
+        <img src="4.jpg" alt="Descrição da Imagem 4">
+        <img src="5.jpg" alt="Descrição da Imagem 5">
+        <img src="6.jpg" alt="Descrição da Imagem 6">
+    </div>
+    <div id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <form id="contactForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Celular:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="button" onclick="enviarFormulario()">Enviar</button>
+        </form>
+        <script>
+            function enviarFormulario() {
+                let name = document.getElementById("name").value;
+                let phone = document.getElementById("phone").value;
+                let message = document.getElementById("message").value;
+                let proprietarioNumero = '(31) 9 9680-1622';
+                let mensagemParaProprietario = " Nome: " + name + " olá possui Horário disponível? " + message;
+                let linkWhatsapp = "https://api.whatsapp.com/send?phone=" + encodeURIComponent(proprietarioNumero) + "&text=" + encodeURIComponent(mensagemParaProprietario);
+                window.location.href = linkWhatsapp;
+            }
+        </script>
+    </div>
+    <footer><p>Desenvolvido por Vitor Hugo Dias Pereira</p></footer>
+</body>
+
+</html>
